@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<?xml-model href="rfc7991bis.rnc"?>
+<!DOCTYPE rfc [
+  <!ENTITY nbsp "&#160;">
+  <!ENTITY zwsp "&#8203;">
+  <!ENTITY nbhy "&#8209;">
+  <!ENTITY wj "&#8288;">
+]>
+
+<rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="IETF"
+  ipr="trust200902" xml:lang="en" version="3">
+  <front>
+    <title>The "doi" URI Scheme</title>
+
+    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-00"
+      status="informational"/>
+
+    <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
+
+      <organization>Sandflow Consulting LLC</organization>
+      <address>
+        <postal>
+          <city>San Mateo</city>
+          <region>CA</region>
+          <country>US</country>
+        </postal>
+        <email>pal@sandflow.com</email>
+      </address>
+    </author>
+
+    <date year="2024"/>
+
+    <keyword>DOI</keyword>
+    <keyword>URI</keyword>
+    <keyword>digital object identifier</keyword>
+
+    <abstract>
+      <t>This document specifies the <tt>"doi"</tt> URI scheme for Digital
+      Object Identifier (DOI) names.</t>
+    </abstract>
+  </front>
+
+  <middle>
+    <section>
+      <name>Introduction</name>
+      <t>A DOI name is a global unique identifier of a referent, which can be
+      any digital, physical or abstract entity, including inventions, literary
+      and artistic works, ideas, symbols, names, images, designs, etc.</t>
+
+      <t>A DOI name is persistent over time. This persistence is provided by the
+      independence of the DOI name from the referent itself and its descriptive
+      elements. These descriptive elements of a referent, including location and
+      ownership, can change over time, and their current values are retrieved by
+      resolving the DOI name. The set of elements retrieved by resolving a DOI
+      name is called the DOI record. The DOI record usually contains a web
+      address (or URL for Unified Resource Locator) representing an instance of
+      the referent, and may contain services such as email, and one or more
+      items of data about the referent (metadata).</t>
+
+      <t>This document specifies a URI scheme for DOI names. When resolved, the
+      URI corresponding to a DOI name yields the DOI record associated with the
+      name.</t>
+
+      <t>The URI scheme formalizes the notation <tt>"doi:&lt;DOI name&gt;"</tt>,
+      which is in widespread use.</t>
+    </section>
+
+    <section>
+      <name>Syntax</name>
+
+      <t>As specified at <xref target="iso26324"/>, a DOI name consists of an
+      ordered sequence of Unicode code points of the Graphic type.</t>
+
+      <t>The <tt>scheme-specific-part</tt> of the URI corresponding to a given
+      DOI name SHALL be equal to the result of the following ordered sequence of
+      steps:</t>
+
+      <ol>
+        <li>express the ordered sequence of Unicode code points that comprise
+        the DOI name as a UTF-8 String, as defined at <xref target="iso10646"/>,
+        without the byte order mark and without any normalization;</li>
+        <li>percent-encode any byte in the UTF-8 String that is neither
+        <tt>unreserved</tt> nor equal to <tt>"/"</tt>.</li>
+      </ol>
+
+      <t>The URI shall contain neither a query component nor a fragment
+      component.</t>
+
+      <aside><t>EXAMPLE 1: The DOI name "10.5594/SMPTE.ST2067-21.2020"
+      corresponds to the URI <tt>&lt;doi:10.5594/SMPTE.ST2067-21.2020</tt>.</t></aside>
+
+      <aside><t>EXAMPLE 2: The DOI name "10.26321/Á.GUTIÉRREZ.ZARZA.02.2018.03"
+      corresponds to the URI
+      <tt>&lt;doi:10.26321/%C3%81.GUTI%C3%89RREZ.ZARZA.02.2018.03&gt;</tt>.</t></aside>
+
+      <aside><t>NOTE 1: The sequence of code points comprising a DOI name is not
+      normalized: two DOI names that differ only in one having the code point
+      sequence &lt;U+00C1&gt; replaced by &lt;U+0041, U+0301&gt; in other are
+      not identical even though they are both code point sequences are rendered
+      identically as the abstract character "Á" .</t></aside>
+
+      <aside><t>NOTE 2: Presenting a DOI name by rendering its sequence of code
+      points to glyphs can be ambiguous since multiple code points or sequences
+      of code points can result in the same glyphs. For example, U+002D
+      HYPHEN-MINUS, U+2212 MINUS SIGN and U+2013 EN DASH are rendered as similar
+      glyphs. As another example, the abstract character "á" can be represented
+      by either the code point U+00E1 or the sequence of code points &lt;U+0061,
+      U+0301&gt;. Presenting a DOI name in its URI form resolves this
+      ambiguity.</t></aside>
+    </section>
+  </middle>
+
+  <back>
+    <references>
+      <name>References</name>
+      <references>
+        <name>Normative References</name>
+        <reference anchor="iso26324">
+          <front>
+            <title abbrev="ISO 26324">ISO 26324, Information and documentation,
+            Digital object identifier system</title>
+            <author>
+              <organization>ISO</organization>
+            </author>
+          </front>
+        </reference>
+        <reference anchor="iso10646">
+          <front>
+            <title abbrev="ISO/IEC 10646">ISO/IEC 10646, Information technology,
+            Universal coded character set (UCS)</title>
+            <author>
+              <organization>ISO</organization>
+            </author>
+          </front>
+        </reference>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3986.xml"/>
+      </references>
+
+      <references>
+        <name>Informative References</name>
+        <xi:include href="https://www.rfc-editor.org/refs/bibxml/reference.RFC.7595.xml"/>
+      </references>
+    </references>
+
+    <section anchor="sec-pixel-fmts">
+      <name>Pixel formats</name>
+
+      <t><xref target="t-pix-fmts"/> defines pixel formats.</t>
+
+    </section>
+  </back>
+</rfc>

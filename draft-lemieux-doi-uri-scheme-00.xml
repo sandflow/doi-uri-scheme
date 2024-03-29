@@ -49,7 +49,7 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       and artistic works, ideas, symbols, names, images, designs, etc. DOI names
       are, for example, widely used to identify academics publications. The DOI
       system is specified in <xref target="iso26324"/> and <xref
-      target="doi-handbook"/>, with the former providing regular formal snapshot
+      target="doi-handbook"/>, with the former offering regular formal snapshot
       of the latter.</t>
 
       <t>EXAMPLE 1: The DOI name "10.1103/PhysRevLett.59.381" refers to the
@@ -70,7 +70,7 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       target="RFC3650"></xref>.</t>
 
       <t>This document specifies a URI scheme for DOI names. This scheme
-      formalizes the notation <tt>"doi:&lt;DOI name&gt;"</tt>, which is in
+      formalizes the notation "doi:&lt;DOI name&gt;", which is in
       widespread use. When resolved, the URI corresponding to a DOI name yields
       the DOI record associated with the name.</t>
 
@@ -128,8 +128,8 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       U+0301&gt;. Presenting a DOI name in its URI form resolves this
       ambiguity.</t>
 
-      <t>NOTE 3: DOI names case-insensitive only when testing for equivalence
-      and only with respect to the Basic Latin Unicode block.</t>
+      <t>NOTE 3: DOI names are case-insensitive only when testing for
+      equivalence and only with respect to the Basic Latin Unicode block.</t>
     </section>
 
     <section>
@@ -143,7 +143,7 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       the following URL (expresssed using ABNF syntaxt as defined at <xref
       target="RFC5234"/>):</t>
 
-      <t><tt>url-scheme "://doi.org/api/handles/" scheme-specific-part</tt></t>
+      <t><tt>url-scheme "://" "doi.org" "/api/handles/" scheme-specific-part</tt></t>
 
       <t>where</t>
       <ul>

@@ -146,13 +146,10 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       the following URL (expresssed using ABNF syntaxt as defined at <xref
       target="RFC5234"/>):</t>
 
-      <t><tt>"https://" "doi.org" "/api/handles/" scheme-specific-part</tt></t>
+      <t><tt>"https://doi.org/api/handles/" scheme-specific-part</tt></t>
 
-      <t>where</t>
-      <ul>
-        <li><tt>scheme-specific-part</tt> is the scheme-specific-part of the DOI
-        name URI, as defined at <xref target="doi-name-syntax"/>.</li>
-      </ul>
+      <t>where <tt>scheme-specific-part</tt> is the scheme-specific-part of the
+      DOI name URI, as defined at <xref target="doi-name-syntax"/>.</t>
 
       <t>The body of the response is a JSON object, as defined at <xref
       target="RFC8259"/>, that contains the following members:</t>
@@ -190,7 +187,7 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       <t><xref target="fig-sample-response"/> illustrates the DOI record, at the
       time of this writing, for the DOI name corresponding to the URI
       &lt;doi:10.1000/182&gt;. The DOI record was retrieved by performing an
-      HTTP GET request to &lt;https://doi.org/10.1000/182&gt;.</t>
+      HTTP GET request to &lt;https://doi.org/api/handles/10.1000/182&gt;.</t>
 
       <figure anchor="fig-sample-response">
         <name>DOI record for the DOI name "10.1000/182" (at the time of this writing)</name>

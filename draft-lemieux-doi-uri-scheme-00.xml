@@ -146,13 +146,12 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       the following URL (expresssed using ABNF syntaxt as defined at <xref
       target="RFC5234"/>):</t>
 
-      <t><tt>url-scheme "://" "doi.org" "/api/handles/" scheme-specific-part</tt></t>
+      <t><tt>"https://" "doi.org" "/api/handles/" scheme-specific-part</tt></t>
 
       <t>where</t>
       <ul>
         <li><tt>scheme-specific-part</tt> is the scheme-specific-part of the DOI
-        name URI, as defined at <xref target="doi-name-syntax"/>; and</li>
-        <li><tt>scheme</tt> is either <tt>"https"</tt> or <tt>"http"</tt>.</li>
+        name URI, as defined at <xref target="doi-name-syntax"/>.</li>
       </ul>
 
       <t>The body of the response is a JSON object, as defined at <xref

@@ -62,12 +62,9 @@ category="info" ipr="trust200902" xml:lang="en" version="3">
       elements. These descriptive elements of a referent, including location and
       ownership, can change over time, and their current values are retrieved by
       resolving the DOI name. The set of elements retrieved by resolving a DOI
-      name is called the DOI record. The DOI record usually contains a web
-      address (or URL for Unified Resource Locator) representing an instance of
-      the referent, and may contain services such as email, and one or more
-      items of data about the referent (metadata). The DOI name resolution
-      process uses the Handle System specified at <xref target="RFC3650"/>,
-      <xref target="RFC3651"/> and <xref target="RFC3652"/>, as updated by <xref
+      name is called the DOI record. The DOI name resolution process uses the
+      Handle System specified at <xref target="RFC3650"/>, <xref
+      target="RFC3651"/> and <xref target="RFC3652"/>, as updated by <xref
       target="DOI-RP"/>.</t>
 
       <t>This document specifies a URI scheme for DOI names. This scheme

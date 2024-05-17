@@ -10,11 +10,11 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="IETF"
 category="info" ipr="trust200902" xml:lang="en" version="3"
-docName="draft-lemieux-doi-uri-scheme-00" >
+docName="draft-lemieux-doi-uri-scheme-01" >
   <front>
     <title>The "doi" URI Scheme</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-00"
+    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-01"
       status="informational"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
@@ -127,11 +127,6 @@ docName="draft-lemieux-doi-uri-scheme-00" >
 
       <t>NOTE 3: DOI names are case-insensitive only when testing for
       equivalence and only with respect to the Basic Latin Unicode block.</t>
-
-      <aside><t>EDITOR'S NOTE: Does DOIF wish to recommend that DOI name only
-      contain code points from the Basic Latin block, to avoid the ambiguity
-      listed above? Such constraints should be made in the DOI Handbook and
-      ultimately in ISO 26324.</t></aside>
     </section>
 
     <section>

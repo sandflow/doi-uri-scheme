@@ -4,12 +4,12 @@
 
 Network Working Group                                 P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
-Intended status: Informational                               16 May 2024
-Expires: 17 November 2024
+Intended status: Informational                               17 May 2024
+Expires: 18 November 2024
 
 
                           The "doi" URI Scheme
-                    draft-lemieux-doi-uri-scheme-00
+                    draft-lemieux-doi-uri-scheme-01
 
 Abstract
 
@@ -31,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 17 November 2024.
+   This Internet-Draft will expire on 18 November 2024.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Lemieux                 Expires 17 November 2024                [Page 1]
+Lemieux                 Expires 18 November 2024                [Page 1]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -66,7 +66,7 @@ Table of Contents
    4.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
      4.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
      4.2.  Informative References  . . . . . . . . . . . . . . . . .   6
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
 
 1.  Introduction
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Lemieux                 Expires 17 November 2024                [Page 2]
+Lemieux                 Expires 18 November 2024                [Page 2]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -165,15 +165,10 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                 Expires 17 November 2024                [Page 3]
+Lemieux                 Expires 18 November 2024                [Page 3]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
-
-      |  EDITOR'S NOTE: Does DOIF wish to recommend that DOI name only
-      |  contain code points from the Basic Latin block, to avoid the
-      |  ambiguity listed above?  Such constraints should be made in the
-      |  DOI Handbook and ultimately in ISO 26324.
 
 3.  Resolution
 
@@ -217,19 +212,19 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
       for the referent identified by the DOI name.  The contents of the
       property are specified at [RFC3651].
 
-
-
-
-
-Lemieux                 Expires 17 November 2024                [Page 4]
-
-Internet-Draft            The "doi" URI Scheme                  May 2024
-
-
    Figure 1 illustrates the DOI record, at the time of this writing, for
    the DOI name corresponding to the URI <doi:10.1000/182>.  The DOI
    record was retrieved by performing an HTTP GET request to
    <https://doi.org/api/handles/10.1000/182>.
+
+
+
+
+
+Lemieux                 Expires 18 November 2024                [Page 4]
+
+Internet-Draft            The "doi" URI Scheme                  May 2024
+
 
    {
      "responseCode": 1,
@@ -273,17 +268,19 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
    [iso26324] ISO, "ISO 26324, Information and documentation, Digital
               object identifier system".
 
+   [iso10646] ISO, "ISO/IEC 10646, Information technology, Universal
+              coded character set (UCS)".
 
 
 
 
-Lemieux                 Expires 17 November 2024                [Page 5]
+
+
+
+Lemieux                 Expires 18 November 2024                [Page 5]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
-
-   [iso10646] ISO, "ISO/IEC 10646, Information technology, Universal
-              coded character set (UCS)".
 
    [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
               Resource Identifier (URI): Generic Syntax", STD 66,
@@ -330,15 +327,16 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
               <https://www.dona.net/sites/default/files/2022-06/DO-
               IRPV3.0--2022-06-30.pdf>.
 
+Author's Address
 
 
 
-Lemieux                 Expires 17 November 2024                [Page 6]
+
+
+Lemieux                 Expires 18 November 2024                [Page 6]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
-
-Author's Address
 
    Pierre-Anthony Lemieux (editor)
    Sandflow Consulting LLC
@@ -389,4 +387,6 @@ Author's Address
 
 
 
-Lemieux                 Expires 17 November 2024                [Page 7]
+
+
+Lemieux                 Expires 18 November 2024                [Page 7]

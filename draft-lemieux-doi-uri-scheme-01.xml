@@ -137,7 +137,7 @@ docName="draft-lemieux-doi-uri-scheme-01" >
       DOI name.</t>
 
       <t>A DOI name URI can be be resolved by performing an HTTP GET request at
-      the following URL (expresssed using ABNF syntaxt as defined at <xref
+      the following URL (expressed using ABNF syntax as defined at <xref
       target="RFC5234"/>):</t>
 
       <t><tt>"https://doi.org/api/handles/" scheme-specific-part</tt></t>

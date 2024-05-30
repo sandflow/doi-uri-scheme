@@ -10,11 +10,11 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="IETF"
 category="info" ipr="trust200902" xml:lang="en" version="3"
-docName="draft-lemieux-doi-uri-scheme-02" >
+docName="draft-lemieux-doi-uri-scheme-03" >
   <front>
     <title>The "doi" URI Scheme</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-02"
+    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-03"
       status="informational"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
@@ -143,7 +143,8 @@ docName="draft-lemieux-doi-uri-scheme-02" >
       <t><tt>"https://doi.org/api/handles/" scheme-specific-part</tt></t>
 
       <t>where <tt>scheme-specific-part</tt> is the scheme-specific-part of the
-      DOI name URI, as defined at <xref target="doi-name-syntax"/>.</t>
+      DOI name URI, as defined at <xref target="doi-name-syntax"/>, and the
+      "https" scheme is specified at <xref target="RFC9110"/>.</t>
 
       <t>The body of the response is a JSON object, as defined at <xref
       target="RFC8259"/>, that contains the following members:</t>
@@ -223,6 +224,22 @@ docName="draft-lemieux-doi-uri-scheme-02" >
       </figure>
 
     </section>
+
+    <section>
+      <name>Security Considerations</name>
+      <t>A DOI name is an opaque string, which does not have a discernible
+      meaning on its own and is for use by humans and machines alike. It
+      consists of a sequence of Unicode codepoints and the security
+      considerations at <xref target="UNICODE-TR36"/> apply.</t>
+
+      <t>The DOI name resolution process is conducted using the Hypertext
+      Transfer Protocol Secure, which ensures condifentiality and integrity of
+      the transaction, and he security considerations at <xref
+      target="RFC9110"/> apply.</t>
+
+      <t>The results of the DOI name resolution process is a JSON object and the
+      security considerations at <xref target="RFC8259"/> apply.</t>
+    </section>
   </middle>
 
   <back>
@@ -252,6 +269,7 @@ docName="draft-lemieux-doi-uri-scheme-02" >
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.5234.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.3651.xml"/>
         <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.8259.xml"/>
+        <xi:include href="https://bib.ietf.org/public/rfc/bibxml/reference.RFC.9110.xml"/>
       </references>
 
       <references>
@@ -273,6 +291,14 @@ docName="draft-lemieux-doi-uri-scheme-02" >
             <title>Digital Object Identifier Resolution Protocol Specification</title>
             <author>
               <organization>DONA Foundation</organization>
+            </author>
+          </front>
+        </reference>
+        <reference anchor="UNICODE-TR36" target="https://www.unicode.org/reports/tr36/">
+          <front>
+            <title>Unicode Security Considerations</title>
+            <author>
+              <organization>Unicode Consortium</organization>
             </author>
           </front>
         </reference>

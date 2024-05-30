@@ -9,7 +9,7 @@ Expires: 1 December 2024
 
 
                           The "doi" URI Scheme
-                    draft-lemieux-doi-uri-scheme-02
+                    draft-lemieux-doi-uri-scheme-03
 
 Abstract
 
@@ -63,10 +63,11 @@ Table of Contents
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . . . .   3
    3.  Resolution  . . . . . . . . . . . . . . . . . . . . . . . . .   4
-   4.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   5
-     4.1.  Normative References  . . . . . . . . . . . . . . . . . .   5
-     4.2.  Informative References  . . . . . . . . . . . . . . . . .   6
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   6
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
+   5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
+     5.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
+     5.2.  Informative References  . . . . . . . . . . . . . . . . .   6
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
 
 1.  Introduction
 
@@ -102,7 +103,6 @@ Table of Contents
 
    This document intended to satisfy the guidelines and registration
    procedures specified at [RFC7595].
-
 
 
 
@@ -183,7 +183,8 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
    "https://doi.org/api/handles/" scheme-specific-part
 
    where scheme-specific-part is the scheme-specific-part of the DOI
-   name URI, as defined at Section 2.
+   name URI, as defined at Section 2, and the "https" scheme is
+   specified at [RFC9110].
 
    The body of the response is a JSON object, as defined at [RFC8259],
    that contains the following members:
@@ -216,7 +217,6 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
    the DOI name corresponding to the URI <doi:10.1000/182>.  The DOI
    record was retrieved by performing an HTTP GET request to
    <https://doi.org/api/handles/10.1000/182>.
-
 
 
 
@@ -261,17 +261,17 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
       Figure 1: DOI record for the DOI name "10.1000/182" (at the time
                               of this writing)
 
-4.  References
+4.  Security Considerations
 
-4.1.  Normative References
+   A DOI name is an opaque string, which does not have a discernible
+   meaning on its own and is for use by humans and machines alike.  It
+   consists of a sequence of Unicode codepoints and the security
+   considerations at [UNICODE-TR36] apply.
 
-   [iso26324] ISO, "ISO 26324, Information and documentation, Digital
-              object identifier system".
-
-   [iso10646] ISO, "ISO/IEC 10646, Information technology, Universal
-              coded character set (UCS)".
-
-
+   The DOI name resolution process is conducted using the Hypertext
+   Transfer Protocol Secure, which ensures condifentiality and integrity
+   of the transaction, and he security considerations at [RFC9110]
+   apply.
 
 
 
@@ -281,6 +281,19 @@ Lemieux                  Expires 1 December 2024                [Page 5]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
+
+   The results of the DOI name resolution process is a JSON object and
+   the security considerations at [RFC8259] apply.
+
+5.  References
+
+5.1.  Normative References
+
+   [iso26324] ISO, "ISO 26324, Information and documentation, Digital
+              object identifier system".
+
+   [iso10646] ISO, "ISO/IEC 10646, Information technology, Universal
+              coded character set (UCS)".
 
    [RFC3986]  Berners-Lee, T., Fielding, R., and L. Masinter, "Uniform
               Resource Identifier (URI): Generic Syntax", STD 66,
@@ -302,7 +315,12 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
               DOI 10.17487/RFC8259, December 2017,
               <https://www.rfc-editor.org/info/rfc8259>.
 
-4.2.  Informative References
+   [RFC9110]  Fielding, R., Ed., Nottingham, M., Ed., and J. Reschke,
+              Ed., "HTTP Semantics", STD 97, RFC 9110,
+              DOI 10.17487/RFC9110, June 2022,
+              <https://www.rfc-editor.org/info/rfc9110>.
+
+5.2.  Informative References
 
    [RFC7595]  Thaler, D., Ed., Hansen, T., and T. Hardie, "Guidelines
               and Registration Procedures for URI Schemes", BCP 35,
@@ -312,6 +330,13 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
    [RFC3650]  Sun, S., Lannom, L., and B. Boesch, "Handle System
               Overview", RFC 3650, DOI 10.17487/RFC3650, November 2003,
               <https://www.rfc-editor.org/info/rfc3650>.
+
+
+
+Lemieux                  Expires 1 December 2024                [Page 6]
+
+Internet-Draft            The "doi" URI Scheme                  May 2024
+
 
    [RFC3652]  Sun, S., Reilly, S., Lannom, L., and J. Petrone, "Handle
               System Protocol (ver 2.1) Specification", RFC 3652,
@@ -327,42 +352,17 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
               <https://www.dona.net/sites/default/files/2022-06/DO-
               IRPV3.0--2022-06-30.pdf>.
 
+   [UNICODE-TR36]
+              Unicode Consortium, "Unicode Security Considerations",
+              <https://www.unicode.org/reports/tr36/>.
+
 Author's Address
-
-
-
-
-
-Lemieux                  Expires 1 December 2024                [Page 6]
-
-Internet-Draft            The "doi" URI Scheme                  May 2024
-
 
    Pierre-Anthony Lemieux (editor)
    Sandflow Consulting LLC
    San Mateo, CA
    United States of America
    Email: pal@sandflow.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

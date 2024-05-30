@@ -4,12 +4,12 @@
 
 Network Working Group                                 P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
-Intended status: Informational                               17 May 2024
-Expires: 18 November 2024
+Intended status: Informational                               30 May 2024
+Expires: 1 December 2024
 
 
                           The "doi" URI Scheme
-                    draft-lemieux-doi-uri-scheme-01
+                    draft-lemieux-doi-uri-scheme-02
 
 Abstract
 
@@ -31,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 18 November 2024.
+   This Internet-Draft will expire on 1 December 2024.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Copyright Notice
 
 
 
-Lemieux                 Expires 18 November 2024                [Page 1]
+Lemieux                  Expires 1 December 2024                [Page 1]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -109,7 +109,7 @@ Table of Contents
 
 
 
-Lemieux                 Expires 18 November 2024                [Page 2]
+Lemieux                  Expires 1 December 2024                [Page 2]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -165,7 +165,7 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                 Expires 18 November 2024                [Page 3]
+Lemieux                  Expires 1 December 2024                [Page 3]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -177,7 +177,7 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
    the DOI name.
 
    A DOI name URI can be be resolved by performing an HTTP GET request
-   at the following URL (expresssed using ABNF syntaxt as defined at
+   at the following URL (expressed using ABNF syntax as defined at
    [RFC5234]):
 
    "https://doi.org/api/handles/" scheme-specific-part
@@ -221,7 +221,7 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                 Expires 18 November 2024                [Page 4]
+Lemieux                  Expires 1 December 2024                [Page 4]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -277,7 +277,7 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                 Expires 18 November 2024                [Page 5]
+Lemieux                  Expires 1 December 2024                [Page 5]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -333,7 +333,7 @@ Author's Address
 
 
 
-Lemieux                 Expires 18 November 2024                [Page 6]
+Lemieux                  Expires 1 December 2024                [Page 6]
 
 Internet-Draft            The "doi" URI Scheme                  May 2024
 
@@ -389,4 +389,4 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                 Expires 18 November 2024                [Page 7]
+Lemieux                  Expires 1 December 2024                [Page 7]

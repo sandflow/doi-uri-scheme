@@ -10,11 +10,11 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="IETF"
 category="info" ipr="trust200902" xml:lang="en" version="3"
-docName="draft-lemieux-doi-uri-scheme-01" >
+docName="draft-lemieux-doi-uri-scheme-02" >
   <front>
     <title>The "doi" URI Scheme</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-01"
+    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-02"
       status="informational"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">

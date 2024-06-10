@@ -4,8 +4,8 @@
 
 Network Working Group                                 P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
-Intended status: Informational                               30 May 2024
-Expires: 1 December 2024
+Intended status: Informational                              10 June 2024
+Expires: 12 December 2024
 
 
                           The "doi" URI Scheme
@@ -31,7 +31,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 1 December 2024.
+   This Internet-Draft will expire on 12 December 2024.
 
 Copyright Notice
 
@@ -42,28 +42,22 @@ Copyright Notice
    Provisions Relating to IETF Documents (https://trustee.ietf.org/
    license-info) in effect on the date of publication of this document.
    Please review these documents carefully, as they describe your rights
-   and restrictions with respect to this document.  Code Components
-   extracted from this document must include Revised BSD License text as
-   described in Section 4.e of the Trust Legal Provisions and are
-   provided without warranty as described in the Revised BSD License.
-
-
-
-
-
-
-
-Lemieux                  Expires 1 December 2024                [Page 1]
-
-Internet-Draft            The "doi" URI Scheme                  May 2024
-
+   and restrictions with respect to this document.
 
 Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
-   2.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . . . .   3
-   3.  Resolution  . . . . . . . . . . . . . . . . . . . . . . . . .   4
+   2.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . . . .   2
+   3.  Resolution  . . . . . . . . . . . . . . . . . . . . . . . . .   3
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
+
+
+
+Lemieux                 Expires 12 December 2024                [Page 1]
+
+Internet-Draft            The "doi" URI Scheme                 June 2024
+
+
    5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      5.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
      5.2.  Informative References  . . . . . . . . . . . . . . . . .   6
@@ -104,16 +98,6 @@ Table of Contents
    This document intended to satisfy the guidelines and registration
    procedures specified at [RFC7595].
 
-
-
-
-
-
-Lemieux                  Expires 1 December 2024                [Page 2]
-
-Internet-Draft            The "doi" URI Scheme                  May 2024
-
-
 2.  Syntax
 
    As specified at [iso26324], a DOI name consists of an ordered
@@ -122,6 +106,13 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
    The scheme-specific-part of the URI corresponding to a given DOI
    name, i.e., the DOI Name URI, SHALL be equal to the result of the
    following ordered sequence of steps:
+
+
+
+Lemieux                 Expires 12 December 2024                [Page 2]
+
+Internet-Draft            The "doi" URI Scheme                 June 2024
+
 
    1.  express the ordered sequence of Unicode code points that comprise
        the DOI name as a UTF-8 String, as defined at [iso10646], without
@@ -163,18 +154,21 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
    NOTE 3: DOI names are case-insensitive only when testing for
    equivalence and only with respect to the Basic Latin Unicode block.
 
-
-
-Lemieux                  Expires 1 December 2024                [Page 3]
-
-Internet-Draft            The "doi" URI Scheme                  May 2024
-
-
 3.  Resolution
 
    Resolving a DOI name means retrieving its DOI record, which contains
    the descriptive elements associated with the referent identified by
    the DOI name.
+
+
+
+
+
+
+Lemieux                 Expires 12 December 2024                [Page 3]
+
+Internet-Draft            The "doi" URI Scheme                 June 2024
+
 
    A DOI name URI can be be resolved by performing an HTTP GET request
    at the following URL (expressed using ABNF syntax as defined at
@@ -221,9 +215,15 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                  Expires 1 December 2024                [Page 4]
+
+
+
+
+
+
+Lemieux                 Expires 12 December 2024                [Page 4]
 
-Internet-Draft            The "doi" URI Scheme                  May 2024
+Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
    {
@@ -277,9 +277,9 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                  Expires 1 December 2024                [Page 5]
+Lemieux                 Expires 12 December 2024                [Page 5]
 
-Internet-Draft            The "doi" URI Scheme                  May 2024
+Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
    The results of the DOI name resolution process is a JSON object and
@@ -333,9 +333,9 @@ Internet-Draft            The "doi" URI Scheme                  May 2024
 
 
 
-Lemieux                  Expires 1 December 2024                [Page 6]
+Lemieux                 Expires 12 December 2024                [Page 6]
 
-Internet-Draft            The "doi" URI Scheme                  May 2024
+Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
    [RFC3652]  Sun, S., Reilly, S., Lannom, L., and J. Petrone, "Handle
@@ -389,4 +389,4 @@ Author's Address
 
 
 
-Lemieux                  Expires 1 December 2024                [Page 7]
+Lemieux                 Expires 12 December 2024                [Page 7]

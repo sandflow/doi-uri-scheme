@@ -8,14 +8,14 @@
   <!ENTITY wj "&#8288;">
 ]>
 
-<rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="IETF"
+<rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="independent"
 category="info" ipr="trust200902" xml:lang="en" version="3"
 docName="draft-lemieux-doi-uri-scheme-03" >
   <front>
     <title>The "doi" URI Scheme</title>
 
     <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-03"
-      status="informational"/>
+    status="informational"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
 

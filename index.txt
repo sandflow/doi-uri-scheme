@@ -4,17 +4,16 @@
 
 Network Working Group                                 P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
-Intended status: Informational                              10 June 2024
-Expires: 12 December 2024
+Intended status: Informational                              24 June 2024
+Expires: 26 December 2024
 
 
                           The "doi" URI Scheme
-                    draft-lemieux-doi-uri-scheme-03
+                    draft-lemieux-doi-uri-scheme-04
 
 Abstract
 
-   This document specifies the "doi" URI scheme, as specified in
-   [RFC3986], for Digital Object Identifier (DOI) names.
+   This document specifies the "doi" URI scheme.
 
 Status of This Memo
 
@@ -31,7 +30,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 December 2024.
+   This Internet-Draft will expire on 26 December 2024.
 
 Copyright Notice
 
@@ -50,15 +49,15 @@ Table of Contents
    2.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . . . .   2
    3.  Resolution  . . . . . . . . . . . . . . . . . . . . . . . . .   3
    4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
+   5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
 
 
 
-Lemieux                 Expires 12 December 2024                [Page 1]
+Lemieux                 Expires 26 December 2024                [Page 1]
 
 Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
-   5.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
      5.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
      5.2.  Informative References  . . . . . . . . . . . . . . . . .   6
    Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
@@ -88,9 +87,10 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
    [RFC3650], [RFC3651] and [RFC3652], as updated by [DOI-RP].
 
    This document specifies a URI scheme for DOI names.  This scheme
-   formalizes the notation "doi:<DOI name>", which is in widespread use.
-   When resolved, the URI corresponding to a DOI name yields the DOI
-   record associated with the name.
+   conforms to the syntax specified at [RFC3986] and formalizes the
+   notation "doi:<DOI name>", which is in widespread use.  When
+   resolved, the URI corresponding to a DOI name yields the DOI record
+   associated with the name.
 
    EXAMPLE 2: "doi:10.1103/PhysRevLett.59.381" is the URI corresponding
    to the DOI name above.
@@ -109,7 +109,7 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
 
-Lemieux                 Expires 12 December 2024                [Page 2]
+Lemieux                 Expires 26 December 2024                [Page 2]
 
 Internet-Draft            The "doi" URI Scheme                 June 2024
 
@@ -165,7 +165,7 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
 
-Lemieux                 Expires 12 December 2024                [Page 3]
+Lemieux                 Expires 26 December 2024                [Page 3]
 
 Internet-Draft            The "doi" URI Scheme                 June 2024
 
@@ -221,7 +221,7 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
 
-Lemieux                 Expires 12 December 2024                [Page 4]
+Lemieux                 Expires 26 December 2024                [Page 4]
 
 Internet-Draft            The "doi" URI Scheme                 June 2024
 
@@ -277,7 +277,7 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
 
-Lemieux                 Expires 12 December 2024                [Page 5]
+Lemieux                 Expires 26 December 2024                [Page 5]
 
 Internet-Draft            The "doi" URI Scheme                 June 2024
 
@@ -333,7 +333,7 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
 
-Lemieux                 Expires 12 December 2024                [Page 6]
+Lemieux                 Expires 26 December 2024                [Page 6]
 
 Internet-Draft            The "doi" URI Scheme                 June 2024
 
@@ -389,4 +389,4 @@ Author's Address
 
 
 
-Lemieux                 Expires 12 December 2024                [Page 7]
+Lemieux                 Expires 26 December 2024                [Page 7]

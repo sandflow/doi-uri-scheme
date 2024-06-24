@@ -9,7 +9,7 @@ Contact:
 
 Change controller:
   DOI Foundation <https://www.doi.org/>
-  contact@doi.org
+  info@doi.org
 
 References:
   https://datatracker.ietf.org/doc/draft-lemieux-doi-uri-scheme/

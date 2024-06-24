@@ -10,11 +10,11 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="independent"
 category="info" ipr="trust200902" xml:lang="en" version="3"
-docName="draft-lemieux-doi-uri-scheme-03" >
+docName="draft-lemieux-doi-uri-scheme-04" >
   <front>
     <title>The "doi" URI Scheme</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-03"
+    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-04"
     status="informational"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
@@ -35,8 +35,7 @@ docName="draft-lemieux-doi-uri-scheme-03" >
     <keyword>digital object identifier</keyword>
 
     <abstract>
-      <t>This document specifies the <tt>"doi"</tt> URI scheme, as specified in
-      <xref target="RFC3986"/>, for Digital Object Identifier (DOI) names.</t>
+      <t>This document specifies the <tt>"doi"</tt> URI scheme.</t>
     </abstract>
   </front>
 
@@ -67,9 +66,10 @@ docName="draft-lemieux-doi-uri-scheme-03" >
       target="DOI-RP"/>.</t>
 
       <t>This document specifies a URI scheme for DOI names. This scheme
-      formalizes the notation "doi:&lt;DOI name&gt;", which is in
-      widespread use. When resolved, the URI corresponding to a DOI name yields
-      the DOI record associated with the name.</t>
+      conforms to the syntax specified at <xref target="RFC3986"/> and
+      formalizes the notation "doi:&lt;DOI name&gt;", which is in widespread
+      use. When resolved, the URI corresponding to a DOI name yields the DOI
+      record associated with the name.</t>
 
       <t>EXAMPLE 2: "doi:10.1103/PhysRevLett.59.381" is the URI corresponding to
       the DOI name above.</t>

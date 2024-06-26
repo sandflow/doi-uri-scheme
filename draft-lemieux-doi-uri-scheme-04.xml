@@ -240,6 +240,28 @@ docName="draft-lemieux-doi-uri-scheme-04" >
       <t>The results of the DOI name resolution process is a JSON object and the
       security considerations at <xref target="RFC8259"/> apply.</t>
     </section>
+
+    <section>
+      <name>IANA Considerations</name>
+      <t>The following is the permanent URI Scheme Registration request, as
+      defined in <xref target="RFC7595"></xref>:</t>
+      <dl newline="true">
+        <dt>Scheme name</dt>
+        <dd>doi</dd>
+        <dt>Status</dt>
+        <dd>Permanent</dd>
+        <dt>Contact</dt>
+        <dd>Pierre-Anthony Lemieux &lt;pal@sandflow.com&gt;</dd>
+        <dt>Change controller</dt>
+        <dd>
+          DOI Foundation<br/>
+          Web: &lt;https://www.doi.org&gt;<br/>
+          Email: &lt;info@doi.org&gt;
+        </dd>
+        <dt>References</dt>
+        <dd>This document</dd>
+      </dl>
+    </section>
   </middle>
 
   <back>

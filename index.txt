@@ -4,12 +4,12 @@
 
 Network Working Group                                 P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
-Intended status: Informational                              26 June 2024
-Expires: 28 December 2024
+Intended status: Informational                             4 August 2024
+Expires: 5 February 2025
 
 
                           The "doi" URI Scheme
-                    draft-lemieux-doi-uri-scheme-05
+                    draft-lemieux-doi-uri-scheme-06
 
 Abstract
 
@@ -30,7 +30,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 28 December 2024.
+   This Internet-Draft will expire on 5 February 2025.
 
 Copyright Notice
 
@@ -47,21 +47,23 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   2
    2.  Syntax  . . . . . . . . . . . . . . . . . . . . . . . . . . .   2
-   3.  DOI Name Resolution . . . . . . . . . . . . . . . . . . . . .   4
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .   5
-   5.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   3.  Equivalence . . . . . . . . . . . . . . . . . . . . . . . . .   3
+   4.  DOI Name Resolution . . . . . . . . . . . . . . . . . . . . .   4
+   5.  Retrieving the referent identified by a DOI name  . . . . . .   6
 
 
 
-Lemieux                 Expires 28 December 2024                [Page 1]
+Lemieux                  Expires 5 February 2025                [Page 1]
 
-Internet-Draft            The "doi" URI Scheme                 June 2024
+Internet-Draft            The "doi" URI Scheme               August 2024
 
 
-   6.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   6
-     6.1.  Normative References  . . . . . . . . . . . . . . . . . .   6
-     6.2.  Informative References  . . . . . . . . . . . . . . . . .   7
-   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   7
+   6.  Security Considerations . . . . . . . . . . . . . . . . . . .   6
+   7.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   6
+   8.  References  . . . . . . . . . . . . . . . . . . . . . . . . .   7
+     8.1.  Normative References  . . . . . . . . . . . . . . . . . .   7
+     8.2.  Informative References  . . . . . . . . . . . . . . . . .   7
+   Author's Address  . . . . . . . . . . . . . . . . . . . . . . . .   8
 
 1.  Introduction
 
@@ -90,7 +92,7 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
    This document specifies a URI scheme for DOI names.  This scheme
    conforms to the syntax specified at [RFC3986] and formalizes the
    notation "doi:<DOI name>", which is in widespread use.  When
-   derefenced as detailed in Section 3, the URI corresponding to a DOI
+   derefenced as detailed in Section 4, the URI corresponding to a DOI
    name yields the DOI record associated with the name.
 
    EXAMPLE 2: "doi:10.1103/PhysRevLett.59.381" is the URI corresponding
@@ -107,16 +109,15 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
 
-
-
-Lemieux                 Expires 28 December 2024                [Page 2]
+Lemieux                  Expires 5 February 2025                [Page 2]
 
-Internet-Draft            The "doi" URI Scheme                 June 2024
+Internet-Draft            The "doi" URI Scheme               August 2024
 
 
-   The scheme-specific-part of the URI corresponding to a given DOI
-   name, i.e., the DOI Name URI, SHALL be equal to the result of the
-   following ordered sequence of steps:
+   A DOI Name URI is a URI that corresponds to a given DOI name.  As
+   defined at [RFC7595], its scheme name SHALL be "doi" and its scheme-
+   specific-part SHALL be equal to the result of the following ordered
+   sequence of steps:
 
    1.  express the ordered sequence of Unicode code points that comprise
        the DOI name as a UTF-8 String, as defined at [iso10646], without
@@ -125,7 +126,7 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
    2.  percent-encode any byte in the UTF-8 String that is neither
        unreserved nor equal to "/".
 
-   The URI shall contain neither a query component nor a fragment
+   A DOI Name URI shall contain neither a query component nor a fragment
    component.
 
    EXAMPLE 1: The DOI name "10.5594/SMPTE.ST2067-21.2020" corresponds to
@@ -155,22 +156,32 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
    the sequence of code points <U+0061, U+0301>.  Presenting a DOI name
    in its URI form resolves this ambiguity.
 
-   NOTE 3: DOI names are case-insensitive only when testing for
-   equivalence and only with respect to the Basic Latin Unicode block.
+3.  Equivalence
+
+   The following procedure SHALL be performed to determine whether two
+   DOI Name URIs are equivalent:
 
 
 
 
 
-
-
-
-Lemieux                 Expires 28 December 2024                [Page 3]
+Lemieux                  Expires 5 February 2025                [Page 3]
 
-Internet-Draft            The "doi" URI Scheme                 June 2024
+Internet-Draft            The "doi" URI Scheme               August 2024
 
 
-3.  DOI Name Resolution
+   1.  the scheme-specific-part of each of the two URIs is percent-
+       decoded into a UTF-8 String;
+
+   2.  the two UTF-8 Strings are interpreted as two DOI names;
+
+   3.  the two DOI Name URIs are equivalent if the two DOI names are
+       equivalent, as defined at [DOI-RP].
+
+   NOTE: When testing for equivalence, DOI names are case-insensitive
+   only with respect to the Basic Latin Unicode block.
+
+4.  DOI Name Resolution
 
    Resolving a DOI name means retrieving its DOI record, which contains
    the descriptive elements associated with the referent identified by
@@ -208,6 +219,13 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
       The property is a String.  It is equal to the DOI name for which
       resolution was requested.
 
+
+
+Lemieux                  Expires 5 February 2025                [Page 4]
+
+Internet-Draft            The "doi" URI Scheme               August 2024
+
+
    values
       The property is an Object.  It contains the descriptive elements
       for the referent identified by the DOI name.  The contents of the
@@ -217,14 +235,6 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
    the DOI name corresponding to the URI <doi:10.1000/182>.  The DOI
    record was retrieved by performing an HTTP GET request to
    <https://doi.org/api/handles/10.1000/182>.
-
-
-
-
-Lemieux                 Expires 28 December 2024                [Page 4]
-
-Internet-Draft            The "doi" URI Scheme                 June 2024
-
 
    {
      "responseCode": 1,
@@ -261,31 +271,55 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
       Figure 1: DOI record for the DOI name "10.1000/182" (at the time
                               of this writing)
 
-4.  Security Considerations
+
+
+
+
+
+
+Lemieux                  Expires 5 February 2025                [Page 5]
+
+Internet-Draft            The "doi" URI Scheme               August 2024
+
+
+5.  Retrieving the referent identified by a DOI name
+
+   While Section 4 specifies the procedure for retrieving the DOI record
+   associated with DOI name, the steps necessary to retrieve the actual
+   referent described by the record depends on the nature of the
+   referent, e.g., a referent can be a physical object.
+
+   Some, but not all, referents can be retrieved by dereferencing an
+   HTTP/HTTPS URI found in their respective DOI records, as illustrated
+   in Figure 1 where the referent identified by the DOI name
+   "10.1000/182" can be retrieved at "http://www.doi.org/hb.html".
+
+   The _single DOI resolution_ and _multiple doi resolution_ functions
+   at [DOI-RP] specify the process of retrieving a referent that is
+   available by dereferencing an HTTP/HTTPS URI.
+
+6.  Security Considerations
 
    A DOI name is an opaque string, which does not have a discernible
    meaning on its own and is for use by humans and machines alike.  It
    consists of a sequence of Unicode codepoints and the security
-   considerations at [UNICODE-TR36] apply.
+   considerations at [UNICODE-TR36] apply.  In particular, and as noted
+   at Section 2, presenting a DOI name by rendering its sequence of code
+   points to glyphs can be ambiguous.  As a result, two DOI names
+   rendering to the same sequence of glyphs can identify referents,
+   including, for example, two software executables with wildly
+   different side-effects.  Presenting a DOI name in its URI form, which
+   consists of a limited subset of characters, can lessen this risk.
 
    The DOI name resolution process is conducted using the Hypertext
    Transfer Protocol Secure, which ensures condifentiality and integrity
    of the transaction, and he security considerations at [RFC9110]
    apply.
 
-
-
-
-
-Lemieux                 Expires 28 December 2024                [Page 5]
-
-Internet-Draft            The "doi" URI Scheme                 June 2024
-
-
    The results of the DOI name resolution process is a JSON object and
    the security considerations at [RFC8259] apply.
 
-5.  IANA Considerations
+7.  IANA Considerations
 
    The following is the permanent URI Scheme Registration request, as
    defined in [RFC7595]:
@@ -295,6 +329,14 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
    Status
       Permanent
+
+
+
+
+Lemieux                  Expires 5 February 2025                [Page 6]
+
+Internet-Draft            The "doi" URI Scheme               August 2024
+
 
    Contact
       Pierre-Anthony Lemieux <pal@sandflow.com>
@@ -307,9 +349,9 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
    References
       This document
 
-6.  References
+8.  References
 
-6.1.  Normative References
+8.1.  Normative References
 
    [iso26324] ISO, "ISO 26324, Information and documentation, Digital
               object identifier system".
@@ -327,17 +369,6 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
               DOI 10.17487/RFC5234, January 2008,
               <https://www.rfc-editor.org/info/rfc5234>.
 
-
-
-
-
-
-
-Lemieux                 Expires 28 December 2024                [Page 6]
-
-Internet-Draft            The "doi" URI Scheme                 June 2024
-
-
    [RFC3651]  Sun, S., Reilly, S., and L. Lannom, "Handle System
               Namespace and Service Definition", RFC 3651,
               DOI 10.17487/RFC3651, November 2003,
@@ -353,7 +384,15 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
               DOI 10.17487/RFC9110, June 2022,
               <https://www.rfc-editor.org/info/rfc9110>.
 
-6.2.  Informative References
+8.2.  Informative References
+
+
+
+
+Lemieux                  Expires 5 February 2025                [Page 7]
+
+Internet-Draft            The "doi" URI Scheme               August 2024
+
 
    [RFC7595]  Thaler, D., Ed., Hansen, T., and T. Hardie, "Guidelines
               and Registration Procedures for URI Schemes", BCP 35,
@@ -384,16 +423,6 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 Author's Address
 
-
-
-
-
-
-Lemieux                 Expires 28 December 2024                [Page 7]
-
-Internet-Draft            The "doi" URI Scheme                 June 2024
-
-
    Pierre-Anthony Lemieux (editor)
    Sandflow Consulting LLC
    San Mateo, CA
@@ -416,33 +445,4 @@ Internet-Draft            The "doi" URI Scheme                 June 2024
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Lemieux                 Expires 28 December 2024                [Page 8]
+Lemieux                  Expires 5 February 2025                [Page 8]

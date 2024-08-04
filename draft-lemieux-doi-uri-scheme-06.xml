@@ -10,11 +10,11 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="independent"
 category="info" ipr="trust200902" xml:lang="en" version="3"
-docName="draft-lemieux-doi-uri-scheme-05" >
+docName="draft-lemieux-doi-uri-scheme-06" >
   <front>
     <title>The "doi" URI Scheme</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-05"
+    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-06"
     status="informational"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
@@ -85,8 +85,9 @@ docName="draft-lemieux-doi-uri-scheme-05" >
       <t>As specified at <xref target="iso26324"/>, a DOI name consists of an
       ordered sequence of Unicode code points of the Graphic type.</t>
 
-      <t>The <tt>scheme-specific-part</tt> of the URI corresponding to a given
-      DOI name, i.e., the DOI Name URI, SHALL be equal to the result of the
+      <t>A DOI Name URI is a URI that corresponds to a given DOI name. As
+      defined at <xref target="RFC7595"/>, its scheme name SHALL be "doi" and
+      its <tt>scheme-specific-part</tt> SHALL be equal to the result of the
       following ordered sequence of steps:</t>
 
       <ol>
@@ -97,7 +98,7 @@ docName="draft-lemieux-doi-uri-scheme-05" >
         <tt>unreserved</tt> nor equal to <tt>"/"</tt>.</li>
       </ol>
 
-      <t>The URI shall contain neither a query component nor a fragment
+      <t>A DOI Name URI shall contain neither a query component nor a fragment
       component.</t>
 
       <t>EXAMPLE 1: The DOI name "10.5594/SMPTE.ST2067-21.2020" corresponds to
@@ -125,9 +126,24 @@ docName="draft-lemieux-doi-uri-scheme-05" >
       the code point U+00E1 or the sequence of code points &lt;U+0061,
       U+0301&gt;. Presenting a DOI name in its URI form resolves this
       ambiguity.</t>
+    </section>
 
-      <t>NOTE 3: DOI names are case-insensitive only when testing for
-      equivalence and only with respect to the Basic Latin Unicode block.</t>
+    <section anchor="sec-doi-name-equivalence">
+      <name>Equivalence</name>
+
+      <t>The following procedure SHALL be performed to determine whether two DOI
+      Name URIs are equivalent:</t>
+
+      <ol>
+        <li>the <tt>scheme-specific-part</tt> of each of the two URIs is
+        percent-decoded into a UTF-8 String;</li>
+        <li>the two UTF-8 Strings are interpreted as two DOI names;</li>
+        <li>the two DOI Name URIs are equivalent if the two DOI names are
+        equivalent, as defined at <xref target="DOI-RP"/>.</li>
+      </ol>
+
+      <t>NOTE: When testing for equivalence, DOI names are case-insensitive only
+      with respect to the Basic Latin Unicode block.</t>
     </section>
 
     <section anchor="sec-doi-name-resolution">
@@ -226,12 +242,38 @@ docName="draft-lemieux-doi-uri-scheme-05" >
 
     </section>
 
+    <section anchor="sec-doi-uri-dereferencing">
+      <name>Retrieving the referent identified by a DOI name</name>
+
+      <t>While <xref target="sec-doi-name-resolution"/> specifies the procedure
+      for retrieving the DOI record associated with DOI name, the steps
+      necessary to retrieve the actual referent described by the record depends
+      on the nature of the referent, e.g., a referent can be a physical
+      object.</t>
+
+      <t>Some, but not all, referents can be retrieved by dereferencing an
+      HTTP/HTTPS URI found in their respective DOI records, as illustrated in
+      <xref target="fig-sample-response"/> where the referent identified by the
+      DOI name "10.1000/182" can be retrieved at "http://www.doi.org/hb.html".</t>
+
+      <t>The <em>single DOI resolution</em> and <em>multiple doi resolution</em>
+      functions at <xref target="DOI-RP"/> specify the process of retrieving a
+      referent that is available by dereferencing an HTTP/HTTPS URI.</t>
+    </section>
+
     <section>
       <name>Security Considerations</name>
       <t>A DOI name is an opaque string, which does not have a discernible
       meaning on its own and is for use by humans and machines alike. It
       consists of a sequence of Unicode codepoints and the security
-      considerations at <xref target="UNICODE-TR36"/> apply.</t>
+      considerations at <xref target="UNICODE-TR36"/> apply. In particular, and
+      as noted at <xref target="doi-name-syntax"/>, presenting a DOI name by
+      rendering its sequence of code points to glyphs can be ambiguous. As a
+      result, two DOI names rendering to the same sequence of glyphs can
+      identify referents, including, for example, two software executables with
+      wildly different side-effects. Presenting a DOI name in its URI form,
+      which consists of a limited subset of characters, can lessen this
+      risk.</t>
 
       <t>The DOI name resolution process is conducted using the Hypertext
       Transfer Protocol Secure, which ensures condifentiality and integrity of

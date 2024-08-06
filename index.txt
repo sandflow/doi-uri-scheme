@@ -4,12 +4,12 @@
 
 Network Working Group                                 P.-A. Lemieux, Ed.
 Internet-Draft                                   Sandflow Consulting LLC
-Intended status: Informational                             4 August 2024
-Expires: 5 February 2025
+Intended status: Informational                             6 August 2024
+Expires: 7 February 2025
 
 
                           The "doi" URI Scheme
-                    draft-lemieux-doi-uri-scheme-06
+                    draft-lemieux-doi-uri-scheme-07
 
 Abstract
 
@@ -30,7 +30,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 5 February 2025.
+   This Internet-Draft will expire on 7 February 2025.
 
 Copyright Notice
 
@@ -53,7 +53,7 @@ Table of Contents
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 1]
+Lemieux                  Expires 7 February 2025                [Page 1]
 
 Internet-Draft            The "doi" URI Scheme               August 2024
 
@@ -109,7 +109,7 @@ Internet-Draft            The "doi" URI Scheme               August 2024
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 2]
+Lemieux                  Expires 7 February 2025                [Page 2]
 
 Internet-Draft            The "doi" URI Scheme               August 2024
 
@@ -165,7 +165,7 @@ Internet-Draft            The "doi" URI Scheme               August 2024
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 3]
+Lemieux                  Expires 7 February 2025                [Page 3]
 
 Internet-Draft            The "doi" URI Scheme               August 2024
 
@@ -176,7 +176,7 @@ Internet-Draft            The "doi" URI Scheme               August 2024
    2.  the two UTF-8 Strings are interpreted as two DOI names;
 
    3.  the two DOI Name URIs are equivalent if the two DOI names are
-       equivalent, as defined at [DOI-RP].
+       equivalent, as defined at [doi-handbook].
 
    NOTE: When testing for equivalence, DOI names are case-insensitive
    only with respect to the Basic Latin Unicode block.
@@ -221,7 +221,7 @@ Internet-Draft            The "doi" URI Scheme               August 2024
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 4]
+Lemieux                  Expires 7 February 2025                [Page 4]
 
 Internet-Draft            The "doi" URI Scheme               August 2024
 
@@ -277,7 +277,7 @@ Internet-Draft            The "doi" URI Scheme               August 2024
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 5]
+Lemieux                  Expires 7 February 2025                [Page 5]
 
 Internet-Draft            The "doi" URI Scheme               August 2024
 
@@ -295,8 +295,8 @@ Internet-Draft            The "doi" URI Scheme               August 2024
    "10.1000/182" can be retrieved at "http://www.doi.org/hb.html".
 
    The _single DOI resolution_ and _multiple doi resolution_ functions
-   at [DOI-RP] specify the process of retrieving a referent that is
-   available by dereferencing an HTTP/HTTPS URI.
+   at [doi-handbook] specify the process of retrieving a referent that
+   is available by dereferencing an HTTP/HTTPS URI.
 
 6.  Security Considerations
 
@@ -333,7 +333,7 @@ Internet-Draft            The "doi" URI Scheme               August 2024
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 6]
+Lemieux                  Expires 7 February 2025                [Page 6]
 
 Internet-Draft            The "doi" URI Scheme               August 2024
 
@@ -389,7 +389,7 @@ Internet-Draft            The "doi" URI Scheme               August 2024
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 7]
+Lemieux                  Expires 7 February 2025                [Page 7]
 
 Internet-Draft            The "doi" URI Scheme               August 2024
 
@@ -445,4 +445,4 @@ Author's Address
 
 
 
-Lemieux                  Expires 5 February 2025                [Page 8]
+Lemieux                  Expires 7 February 2025                [Page 8]

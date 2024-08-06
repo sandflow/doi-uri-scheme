@@ -10,11 +10,11 @@
 
 <rfc xmlns:xi="http://www.w3.org/2001/XInclude" submissionType="independent"
 category="info" ipr="trust200902" xml:lang="en" version="3"
-docName="draft-lemieux-doi-uri-scheme-06" >
+docName="draft-lemieux-doi-uri-scheme-07" >
   <front>
     <title>The "doi" URI Scheme</title>
 
-    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-06"
+    <seriesInfo name="Internet-Draft" value="draft-lemieux-doi-uri-scheme-07"
     status="informational"/>
 
     <author initials='P.-A.' surname='Lemieux' fullname='Pierre-Anthony Lemieux' role="editor">
@@ -139,7 +139,7 @@ docName="draft-lemieux-doi-uri-scheme-06" >
         percent-decoded into a UTF-8 String;</li>
         <li>the two UTF-8 Strings are interpreted as two DOI names;</li>
         <li>the two DOI Name URIs are equivalent if the two DOI names are
-        equivalent, as defined at <xref target="DOI-RP"/>.</li>
+        equivalent, as defined at <xref target="doi-handbook"/>.</li>
       </ol>
 
       <t>NOTE: When testing for equivalence, DOI names are case-insensitive only
@@ -257,7 +257,7 @@ docName="draft-lemieux-doi-uri-scheme-06" >
       DOI name "10.1000/182" can be retrieved at "http://www.doi.org/hb.html".</t>
 
       <t>The <em>single DOI resolution</em> and <em>multiple doi resolution</em>
-      functions at <xref target="DOI-RP"/> specify the process of retrieving a
+      functions at <xref target="doi-handbook"/> specify the process of retrieving a
       referent that is available by dereferencing an HTTP/HTTPS URI.</t>
     </section>
 

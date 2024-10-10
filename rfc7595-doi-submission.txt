@@ -1,0 +1,15 @@
+Scheme name:
+  doi
+
+Status:
+  Permanent
+
+Contact:
+  Pierre-Anthony Lemieux <pal@sandflow.com>
+
+Change controller:
+  DOI Foundation <https://www.doi.org/>
+  info@doi.org
+
+References:
+  DOI Foundation, DOI URI Scheme <https://doi.org/10.1000/292>
